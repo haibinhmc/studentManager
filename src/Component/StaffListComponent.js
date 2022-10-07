@@ -33,17 +33,20 @@ const RenderStaffItem = ({ staff, onDeleteStaff }) => {
             }}
         >
             <div>
-                <Link to={`/staff/${staff.id}`}>
-                    <Card>
-                        <CardImg width="100%" src={staff.image} alt={staff.name} />
-                        <CardBody>
-                            <CardSubtitle>{staff.name}</CardSubtitle>
-                        </CardBody>
-                    </Card>
-                </Link>
-                <Button color="danger" onClick={() => onDeleteStaff(staff.id)}>
-                    Delete
-                </Button>
+                <div>
+                    <Link to={`/staff/${staff.id}`}>
+                        <Card>
+                            <CardImg width="100%" src={staff.image} alt={staff.name} />
+                            <CardBody>
+                                <CardSubtitle>{staff.name}</CardSubtitle>
+                            </CardBody>
+                        </Card>
+                    </Link></div>
+                <div className="btn-delete" >
+                    <Button color="danger" onClick={() => onDeleteStaff(staff.id)}>
+                        Delete
+                    </Button>
+                </div>
             </div>
         </FadeTransform>
     );
